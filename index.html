@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bestell App</title>
+
+    <script src="./scripts/db.js"></script>
+    <script src="./script.js"></script>
+    <script src="./scripts/template.js"></script>
+
+    <link rel="stylesheet" href="./styles/assets.css" />
+    <link rel="stylesheet" href="./styles/standard.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./styles/fonts.css" />
+    <link
+      rel="shortcut icon"
+      href="./assets/icons/favicon-16x16.png"
+      type="image/x-icon"
+    />
+  </head>
+
+  <body onload="renderDishes()">
+    <header>
+      <div class="ctnHeader">
+        <img class="imageLogo" src="./assets/logo/Logo.png" alt="imageLogo" />
+        <img
+          class="imageMenu"
+          src="./assets/icons/menuWhite.png"
+          alt="imageMenu"
+        />
+      </div>
+    </header>
+
+    <section class="ctnRestauranBasket">
+      <div class="ctnRestaurant">
+        <div class="imagesHeader">
+          <img id="imageMenu" src="./assets/img/food.jpg" alt="imageMenu" />
+          <img
+            id="imageLogoOverlay"
+            src="./assets/icons/besteck.png"
+            alt="imageLogo"
+          />
+        </div>
+        <div class="restaurantHeader">
+          <h1>Pizza Manufaktur</h1>
+          <div class="restaurantRating">Bewertung (4,8 von 5 Sternen)</div>
+        </div>
+
+        <div class="restaurantNavbar">
+          <img id="arrow" src="./assets/icons/sort-26.png" alt="" />
+          <a href="#" class="linkNavbar">Salat</a>
+          <a href="#" class="linkNavbar">Pizza</a>
+          <a href="#" class="linkNavbar">Dessert</a>
+
+          <a href=""></a>
+        </div>
+
+        <div id="dishes" class="dishes">
+        </div>
+      </div>
+
+      <div class="ctnBasketWrapper">
+        <div class="ctnBasketSticky">
+          <h2 id="titleBasket">Warenkorb</h2>
+          <div class="ctnBasket">
+
+            <div id="dishesBasket" class="dishesBasket">
+              <p class="titleDishesBasket">Gemischter Salat</p>
+              <div class="ctnTotalAmountBasket">
+                <div class="totalAmountBasket">
+                  <img 
+                    class="plusMinusBasket"
+                    src="./assets/icons/minus-30.png"
+                    alt="iconMinus"
+                  />
+                  <p id="singleAmountBasket">3x</p>
+                  <img onclick="decreaseAmount()"
+                    class="plusMinusBasket"
+                    src="./assets/icons/plus-30.png"
+                    alt="iconPlus"
+                  />
+                </div>
+                <div class="summaryDish">
+                  <p id="priceAmount">25,50 €</p>
+                  <img
+                    class="plusMinusBasket"
+                    src="./assets/icons/trash-48.png"
+                    alt="iconTrash"
+                  />
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="ctnTotal">
+            <div id="subtotal">
+              <p>Zwischensumme</p>
+              <p>19,99 €</p>
+            </div>
+
+            <div id="deliveryCosts">
+              <p>Lieferkosten</p>
+              <p>5,99 €</p>
+            </div>
+
+            <div id="totalCosts">
+              <p>Gesamtkosten</p>
+              <p>19,99 €</p>
+            </div>
+          </div>
+          <div class="ctnButtonPay">
+            <button class="pay">Zur Kasse</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="ctnBasketResponsive"></div> -->
+    </section>
+
+    <footer>
+      <div class="ctnFooter">
+        <p>© Simone Arnold</p>
+        <p id="icon8">
+          Icons by <a href="https://icons8.de/" target="_blank">Icons8</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

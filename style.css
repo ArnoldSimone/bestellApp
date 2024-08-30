@@ -1,0 +1,317 @@
+/* orange           #ff8000 */
+/* orange hover        #fee5cb */
+/* Schriftfarbe Gericht Header #6d757a */
+
+/* HEADER */
+
+.ctnHeader {
+  display: flex;
+  justify-content: space-between;
+  background-color: #ff8000;
+  align-items: center;
+  height: 80px;
+  padding: 16px;
+}
+
+.imageLogo {
+  height: 56px;
+}
+
+.imageMenu {
+  height: 28px;
+}
+
+.imagesHeader {
+  position: relative;
+}
+
+#imageLogoOverlay {
+  width: 56px;
+  position: absolute;
+  top: 130px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #d3d3d3;
+  border-radius: 28px;
+  filter: drop-shadow(0px 0px 8px #ffffff);
+}
+
+h1 {
+  font-size: 24px;
+}
+
+/* SECTIOM ctnRestauranBasket */
+
+.restaurantHeader {
+  padding: 16px;
+}
+
+.restaurantRating {
+  padding: 16px 0 0 0;
+  color: #ff8000;
+}
+
+.restaurantNavbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px;
+  font-weight: bold;
+  color: #6d757a;
+  background-color: #e6e6e6;
+}
+
+#arrow {
+  height: 24px;
+}
+
+.ctnRestauranBasket {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  width: 100%;
+}
+
+.linkNavbar {
+  border-radius: 16px;
+  padding: 4px 16px;
+  color: #6d757a;
+}
+
+.linkNavbar:hover {
+  color: #ff8000;
+  cursor: pointer;
+  background-color: white;
+}
+
+/* ctnRestaurant */
+
+.ctnRestaurant {
+  width: calc(100% - 300px);
+}
+
+#imageMenu {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  opacity: 0.8;
+}
+
+/* menu */
+
+.ctnMealsCategory {
+  padding: 16px;
+}
+
+#category {
+  font-size: 24px;
+  padding: 16px 0;
+}
+
+.ctnSingleMeal {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.singleMeal {
+  border: 1px solid rgb(228, 228, 228);
+  border-radius: 5px;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: opacity 0.3s ease;
+}
+
+.singleMeal:hover {
+  background-color: #eeeeee;
+}
+
+.mealDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+}
+
+.meal {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.description {
+  font-size: 16px;
+}
+
+.price {
+  color: #ff8000;
+  font-size: 16px;
+}
+
+.mealImageAdd {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-right: 8px;
+}
+
+#imageSingleMenu {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+#imageAmount {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(20%, -35%);
+  z-index: 1000;
+  background-color: white;
+  border-radius: 16px;
+  height: 30px;
+  width: 30px;
+  padding: 4px;
+  border: 1px solid rgb(228, 228, 228);
+}
+
+#imageAmount:hover {
+  cursor: pointer;
+  background-color: #f7d8ba;
+}
+
+
+
+/* FOOTER */
+
+.ctnFooter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #ff8000;
+  height: 60px;
+  padding: 16px;
+  color: white;
+  /* position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0; */
+}
+
+#icon8 {
+  font-size: 14px;
+}
+
+/* ctnBasketSticky */
+
+.ctnBasketWrapper {
+  width: 300px;
+  flex-grow: 1;
+  font-size: 16px;
+  box-shadow: -5px 0px 15px rgba(0, 0, 0, 0.2); /* Schatten auf der linken Seite */
+}
+
+.ctnBasketSticky {
+  position: sticky;
+  top: 0;
+}
+
+#titleBasket {
+  width: 100%;
+  padding: 16px;
+  text-align: center;
+  border-bottom: 1px solid rgb(228, 228, 228);
+}
+
+.ctnBasket {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 100%;
+  padding: 16px;
+  gap: 8px;
+}
+
+.dishesBasket {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.titleDishesBasket {
+  font-weight: bold;
+  padding: 8px 0;
+}
+
+.ctnTotalAmountBasket {
+  display: flex;
+  justify-content: space-between;
+}
+
+.totalAmountBasket {
+  display: flex;
+  width: 40%;
+  justify-content: space-evenly;
+  gap: 10px;
+  align-items: center;
+}
+
+.plusMinusBasket {
+  height: 20px;
+}
+
+.plusMinusBasket:hover {
+  cursor: pointer;
+}
+
+.summaryDish {
+  display: flex;
+  width: 60%;
+  justify-content: end;
+  gap: 10px;
+  align-items: center;
+}
+
+#subtotal,
+#deliveryCosts,
+#totalCosts {
+  display: flex;
+  justify-content: space-between;
+}
+
+#totalCosts:last-child p {
+  font-weight: bold;
+}
+
+.ctnTotal {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 6px;
+  padding: 16px;
+}
+
+.ctnButtonPay {
+  padding: 16px;
+}
+
+.pay {
+  background-color: #ff8000;
+  font-size: 20px;
+  font-weight: bold;
+  width: 100%;
+  padding: 8px;
+  color: white;
+  border-radius: 20px;
+  border: none;
+}
+
+.pay:hover {
+  background-color: #ff8913;
+
+}
