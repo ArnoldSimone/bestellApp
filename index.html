@@ -20,7 +20,7 @@
     />
   </head>
 
-  <body onload="renderDishes()">
+  <body onload="init()">
     <header>
       <div class="ctnHeader">
         <img class="imageLogo" src="./assets/logo/Logo.png" alt="imageLogo" />
@@ -56,36 +56,36 @@
           <a href=""></a>
         </div>
 
-        <div id="dishes" class="dishes">
-        </div>
+        <div id="dishes" class="dishes"></div>
       </div>
 
       <div class="ctnBasketWrapper">
         <div class="ctnBasketSticky">
           <h2 id="titleBasket">Warenkorb</h2>
 
-          <div id="ctnBasket" class="ctnBasket">
+          <div id="ctnSwitch" class="ctnSwitch dnone">
+            <div class="switch">
+              <div
+                onclick="activate('delivery', 'pickup')"
+                id="delivery"
+                class="ctnSwitchDelivery"
+              >
+                <p>Lieferung</p>
+              </div>
+              <div
+                onclick="activate('pickup', 'delivery')"
+                id="pickup"
+                class="ctnSwitchDelivery active"
+              >
+                <p>Abholung</p>
+              </div>
+            </div>
           </div>
 
-          <div class="ctnTotal">
-            <div id="subtotal">
-              <p>Zwischensumme</p>
-              <p>19,99 €</p>
-            </div>
+          <div id="ctnBasket" class="ctnBasket"></div>
 
-            <div id="deliveryCosts">
-              <p>Lieferkosten</p>
-              <p>5,99 €</p>
-            </div>
-
-            <div id="totalCosts">
-              <p>Gesamtkosten</p>
-              <p>19,99 €</p>
-            </div>
-          </div>
-          <div class="ctnButtonPay">
-            <button class="pay">Zur Kasse</button>
-          </div>
+          <div id="ctnSummary" class="ctnSummary"></div>
+          <div id="ctnEmptyBasket" class="ctnEmptyBasket"></div>
         </div>
       </div>
 

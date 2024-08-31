@@ -244,6 +244,49 @@ h1 {
   border-bottom: 1px solid rgb(228, 228, 228);
 }
 
+/* Switch Delivery */
+
+.ctnSwitch {
+  display: flex;
+  justify-content: center;
+  padding-top: 24px;
+}
+
+.switch {
+  display: flex;
+  height: 32px;
+  width: 200px;
+  background-color: #6d757a;
+  border-radius: 16px;
+  color: rgb(199, 199, 199);
+  font-size: 12px;
+}
+
+.ctnSwitchDelivery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 50%;
+  text-align: center;
+  border-radius: 16px;
+}
+
+.ctnSwitchDelivery:hover {
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.active {
+  background-color: #eeeeee;
+  color: black;
+  font-size: 14px;
+  border: 2px solid #6d757a;
+}
+
+
+/* Basket */
+
 .ctnBasket {
   display: flex;
   flex-direction: column;
@@ -340,4 +383,13 @@ h1 {
 
 .dnone {
   display: none;
+}
+
+.ctnEmptyBasket {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
 }
