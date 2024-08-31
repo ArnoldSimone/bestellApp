@@ -1,7 +1,8 @@
 let emptyBasket = true;
 let subCostsDishes = 0;
 let subCostsTotal = 0;
-let delivery = 0;
+let delivery = false;
+let deliveryCosts = 5.90;
 
 function init() {
   emptyBasket = true;
@@ -68,7 +69,7 @@ function renderBasket() {
       } else {
         imageAmountRef.classList.remove("dnone");
         imageAmountNumberRef.classList.add("dnone");
-
+       
       }
     }
   }
@@ -107,6 +108,9 @@ function renderEmptyBasket() {
   if (emptyBasket === true) {
     ctnSwitchRef.classList.add("dnone");
     ctnSummaryRef.innerHTML = "";
+    document.getElementById('delivery').classList.remove('active');
+    document.getElementById('pickup').classList.add('active');
+    delivery = false;
     ctnEmptyBasketRef.innerHTML = 
     `           
     <img src="./assets/icons/basket.png" alt="iconBasket" />
@@ -114,21 +118,16 @@ function renderEmptyBasket() {
   }
 }
 
-function activate(activeId, inactiveId) {
-  document.getElementById(activeId).classList.add('active');
-  document.getElementById(inactiveId).classList.remove('active');
-  addDeliveryCosts();
-} 
- 
-function addDeliveryCosts(){
-  if (document.getElementById('delivery').classList.contains('active')) {
-    delivery = 5.90;
-    document.getElementById('deliveryCost').innerHTML = "5,90 €";
-  } else  {
-    document.getElementById('deliveryCost').innerHTML = "0,00 €";
-  }
+function addDeliveryCosts() {
+  document.getElementById('delivery').classList.add('active');
+  document.getElementById('pickup').classList.remove('active');
+  delivery = true;
+  renderSummary();
 }
 
-
-// document.getElementById('delivery').classList.add('active');
-// document.getElementById('pickup').classList.remove('active');
+function removeDeliveryCosts() {
+  document.getElementById('delivery').classList.remove('active');
+  document.getElementById('pickup').classList.add('active');
+  delivery = false;
+  renderSummary();
+}

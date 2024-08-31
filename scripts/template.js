@@ -81,12 +81,12 @@ return `
 
       <div id="deliveryCosts">
         <p>Lieferkosten</p>
-        <p id="deliveryCost">0,00 €</p>
+        <p id="deliveryCost">${(delivery === false ? "0,00" : deliveryCosts.toFixed(2).replace(".",","))} €</p>
       </div>
 
       <div id="totalCosts">
         <p>Gesamtkosten</p>
-        <p>19,99 €</p>
+        <p>${(delivery === false ? subCostsTotal.toFixed(2).replace(".",",") : (subCostsTotal+deliveryCosts).toFixed(2).replace(".",","))} €</p>
       </div>
     </div>
     <div class="ctnButtonPay">
