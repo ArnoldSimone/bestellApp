@@ -49,9 +49,9 @@
 
         <div class="restaurantNavbar">
           <img id="arrow" src="./assets/icons/sort-26.png" alt="" />
-          <a href="#" class="linkNavbar">Salat</a>
-          <a href="#" class="linkNavbar">Pizza</a>
-          <a href="#" class="linkNavbar">Dessert</a>
+          <a href="#category0" class="linkNavbar">Salat</a>
+          <a href="#category1" class="linkNavbar">Pizza</a>
+          <a href="#category2" class="linkNavbar">Dessert</a>
 
           <a href=""></a>
         </div>
@@ -59,7 +59,7 @@
         <div id="dishes" class="dishes"></div>
       </div>
 
-      <div class="ctnBasketWrapper">
+      <div id="ctnBasketWrapper" class="ctnBasketWrapper">
         <div class="ctnBasketSticky">
           <h2 id="titleBasket">Warenkorb</h2>
 
@@ -88,8 +88,23 @@
           <div id="ctnEmptyBasket" class="ctnEmptyBasket"></div>
         </div>
       </div>
+    </section>
 
-      <!-- <div class="ctnBasketResponsive"></div> -->
+    <section id="ctnBasketResponsive" class="ctnBasketResponsive dnone">
+      <div onclick="BasketToggle()" class="ctnBasketButtonResponsive">
+        <button id="basketButtonResponsive" class="basketButtonResponsive">
+          <div class="imageBasketNumber">
+            <img
+              class="iconBasketResponsive"
+              src="./assets/icons/warenkorb.png"
+              alt="iconBasket"
+            />
+            <div id="numberAmountBasket" class="numberAmountBasket">
+            </div>
+          </div>
+          <span id="basketButtonText">Warenkorb anzeigen</span>
+        </button>
+      </div>
     </section>
 
     <footer>

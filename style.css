@@ -59,6 +59,9 @@ h1 {
   font-weight: bold;
   color: #6d757a;
   background-color: #e6e6e6;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: top 0.3s;
+  width: 100%;
 }
 
 #arrow {
@@ -103,7 +106,7 @@ h1 {
   padding: 16px;
 }
 
-#category {
+.category {
   font-size: 24px;
   padding: 16px 0;
 }
@@ -121,6 +124,7 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 15px;
   transition: opacity 0.3s ease;
 }
 
@@ -142,6 +146,14 @@ h1 {
 
 .description {
   font-size: 16px;
+  height: 40px;
+  max-height: 40px; /* Maximalhöhe auf 40px festlegen */
+  overflow: hidden; /* Überlauf verstecken */
+  text-overflow: ellipsis; /* Überlauf mit ... anzeigen */
+  display: -webkit-box; /* Flexbox für WebKit-Browser */
+  -webkit-box-orient: vertical; /* Vertikale Ausrichtung */
+  -webkit-line-clamp: 2; /* Maximal 2 Zeilen anzeigen */
+  line-height: 20px; /* Zeilenhöhe auf 20px festlegen, um 2 Zeilen zu ermöglichen */
 }
 
 .price {
@@ -206,6 +218,32 @@ h1 {
   background-color: #f7d8ba;
 }
 
+.imageBasketNumber {
+  position: relative;
+  top: 3px;
+}
+
+.numberAmountBasket {
+  display: flex;
+  justify-content: center;
+  color: #ff8000;
+  font-weight: 600;
+  font-size: 14px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(60%, -00%);
+  z-index: 1000;
+  background-color: white;
+  border-radius: 16px;
+  height: 20px;
+  width: 20px;
+  padding: 1px;
+  border: 1px solid rgb(228, 228, 228);
+}
+
+
+
 /* FOOTER */
 
 .ctnFooter {
@@ -214,9 +252,10 @@ h1 {
   justify-content: center;
   flex-direction: column;
   background-color: #ff8000;
-  height: 60px;
+  height: 50px;
   padding: 16px;
   color: white;
+  z-index: 2000;
 }
 
 #icon8 {
@@ -234,7 +273,7 @@ h1 {
 
 .ctnBasketSticky {
   position: sticky;
-  top: 0;
+  top: 0px;
 }
 
 #titleBasket {
@@ -284,7 +323,6 @@ h1 {
   border: 2px solid #6d757a;
 }
 
-
 /* Basket */
 
 .ctnBasket {
@@ -332,7 +370,6 @@ h1 {
 .plusMinusBasket:hover {
   cursor: pointer;
   background-color: #f7d8ba;
-
 }
 
 .summaryDish {
@@ -363,10 +400,14 @@ h1 {
 }
 
 .ctnButtonPay {
+  display: flex;
   padding: 16px;
 }
 
 .pay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #ff8000;
   font-size: 20px;
   font-weight: bold;
@@ -379,6 +420,7 @@ h1 {
 
 .pay:hover {
   background-color: #ff8913;
+  cursor: pointer;
 }
 
 .dnone {
@@ -392,4 +434,89 @@ h1 {
   align-items: center;
   text-align: center;
   gap: 16px;
+}
+
+.ctnBasketButtonResponsive {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: fixed;
+  bottom: 65px;
+  display: none;
+}
+
+.basketButtonResponsive {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  background-color: #ff8000;
+  font-size: 20px;
+  font-weight: bold;
+  width: 100%;
+  padding: 6px;
+  color: white;
+  border-radius: 20px;
+  border: none;
+}
+
+.basketButtonResponsive:hover {
+  background-color: #ff8913;
+  cursor: pointer;
+}
+
+.iconBasketResponsive {
+  height: 30px;
+}
+
+@media (max-width: 850px) {
+  .description {
+    font-size: 14px;
+  }
+  .price {
+    font-size: 14px;
+  }
+  .meal {
+    font-size: 18px;
+  }
+  .ctnBasketWrapper {
+    display: none; /* Standardmäßig ausgeblendet */
+    position: fixed; /* Um das Basket an die richtige Position zu setzen */
+    top: 0;
+    right: 0;
+    bottom: 0px;
+    background-color: white;
+    width: 100%;
+    z-index: 1000; /* Damit es über anderen Elementen liegt */
+    overflow-y: auto;
+    border: none;
+  }
+  .ctnBasketWrapper.active {
+    display: block;
+  }
+  .ctnRestaurant {
+    width: 100%;
+  }
+  .ctnFooter {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  .dishes {
+    margin-bottom: 140px;
+  }
+
+  .ctnBasketButtonResponsive {
+    display: flex;
+    z-index: 2000;
+    padding: 16px;
+  }
+  .pay {
+    width: 150px;
+  }
+  .ctnButtonPay {
+    justify-content: end;
+  }
 }
