@@ -51,10 +51,15 @@
   }
   
   .restaurantRating > span {
-    padding-left: 16px;
+    padding-left: 10px;
+    font-size: 13px;
   }
 
   .restaurantHeader > span {
     font-size: 16px;
     color: #ff8000;
+  }
+
+  #basketButtonText {
+    padding: 6px 0;
   }

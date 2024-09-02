@@ -120,7 +120,7 @@ function getOrderedMessage() {
   return `           
     <img src="./assets/icons/basket.png" alt="iconBasket" />
     <p>Vielen Dank für Ihre Bestellung.</p>
-    <p>Ihre Testbestellung ist bei uns eingegengen.</p>
+    <p>Ihre Testbestellung ist bei uns eingegangen.</p>
     <div class="ctnButtonPay">
       <a href="#imageMenu">
         <button onclick="closeBasketAfterOrder()" class="ordered">Zurück zur Startseite</button>

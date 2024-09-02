@@ -34,6 +34,8 @@
   flex-direction: row;
   flex-grow: 1;
   width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .linkNavbar {
@@ -283,7 +285,7 @@
   width: 100%;
   padding: 16px;
   gap: 8px;
-  max-height: 450px;
+  max-height: 350px;
   overflow: hidden;
   overflow-y: visible;
   margin-top: 40px;

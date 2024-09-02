@@ -56,5 +56,8 @@
     .ctnButtonPay {
       justify-content: end;
     }
+    .ctnRestauranBasket {
+      overflow: scroll;
+    }
   }
   
