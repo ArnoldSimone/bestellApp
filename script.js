@@ -83,6 +83,7 @@ function renderBasket() {
       let ctnSwitchRef = document.getElementById("ctnSwitch");
       if (menu[indexMenu].dishes[indexDishes].amount >= 1) {
         emptyBasket = false;
+        
         imageAmountRef.classList.add("dnone");
         imageAmountNumberRef.classList.remove("dnone");
         ctnSwitchRef.classList.remove("dnone");
