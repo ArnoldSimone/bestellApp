@@ -90,7 +90,7 @@ let menu = [
         amount: 0,
       },
       {
-        name: "Schokoladenmousse",
+        name: "Mousse au chocolat",
         price: 6.0,
         description: "Luftiges Mousse aus Zartbitterschokolade",
         image: "./assets/img/chocolatemousse.jpg",

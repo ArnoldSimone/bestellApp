@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="./styles/standard.css" />
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./styles/fonts.css" />
+    <link rel="stylesheet" href="./styles/mediaqueries.css" />
+    <link rel="stylesheet" href="./styles/header.css" />
+    <link rel="stylesheet" href="./styles/footer.css" />
     <link
       rel="shortcut icon"
       href="./assets/icons/favicon-16x16.png"
@@ -21,6 +24,7 @@
   </head>
 
   <body onload="init()">
+
     <header>
       <div class="ctnHeader">
         <img class="imageLogo" src="./assets/logo/Logo.png" alt="imageLogo" />
@@ -43,23 +47,26 @@
           />
         </div>
         <div class="restaurantHeader">
-          <h1>Pizza Manufaktur</h1>
-          <div class="restaurantRating">Bewertung (4,8 von 5 Sternen)</div>
+          <h1>Pizza Paradiso</h1>
+          <div class="restaurantRating">
+            <img class="stars" src="./assets/icons/star.png" alt="iconStar">
+            <img class="stars"  src="./assets/icons/star.png" alt="iconStar">
+            <img class="stars"  src="./assets/icons/star.png" alt="iconStar">
+            <img class="stars" src="./assets/icons/star.png" alt="iconStar">
+            <img class="stars" src="./assets/icons/starHalf.png" alt="iconStar">
+            <span>4,8 (200+)</span>
+          </div>
         </div>
-
         <div class="restaurantNavbar">
           <img id="arrow" src="./assets/icons/sort-26.png" alt="" />
-          <a href="#" class="linkNavbar">Salat</a>
-          <a href="#" class="linkNavbar">Pizza</a>
-          <a href="#" class="linkNavbar">Dessert</a>
-
-          <a href=""></a>
+          <a href="#category0" class="category0 linkNavbar">Salat</a>
+          <a href="#category1" class="category1 linkNavbar">Pizza</a>
+          <a href="#category2" class="category2 linkNavbar">Dessert</a>
         </div>
-
         <div id="dishes" class="dishes"></div>
       </div>
 
-      <div class="ctnBasketWrapper">
+      <div id="ctnBasketWrapper" class="ctnBasketWrapper">
         <div class="ctnBasketSticky">
           <h2 id="titleBasket">Warenkorb</h2>
 
@@ -88,8 +95,24 @@
           <div id="ctnEmptyBasket" class="ctnEmptyBasket"></div>
         </div>
       </div>
+    </section>
 
-      <!-- <div class="ctnBasketResponsive"></div> -->
+    <section id="ctnBasketResponsive" class="ctnBasketResponsive dnone">
+      <div onclick="BasketToggle()" class="ctnBasketButtonResponsive">
+        <button id="basketButtonResponsive" class="basketButtonResponsive">
+          <div class="imageBasketNumber">
+            <img
+              class="iconBasketResponsive"
+              src="./assets/icons/warenkorb.png"
+              alt="iconBasket"
+            />
+            <div id="numberAmountBasket" class="numberAmountBasket">
+            </div>
+          </div>
+          <span id="basketButtonText">Warenkorb</span>
+          <span id="basketButtonTotalCosts"></span>
+        </button>
+      </div>
     </section>
 
     <footer>
@@ -100,5 +123,6 @@
         </p>
       </div>
     </footer>
+
   </body>
 </html>

@@ -1,0 +1,55 @@
+/* HEADER */
+
+.ctnHeader {
+    display: flex;
+    justify-content: space-between;
+    background-color: #ff8000;
+    align-items: center;
+    height: 80px;
+    padding: 16px;
+  }
+  
+  .imageLogo {
+    height: 56px;
+  }
+  
+  .imageMenu {
+    height: 28px;
+  }
+  
+  .imagesHeader {
+    position: relative;
+  }
+  
+  #imageLogoOverlay {
+    width: 56px;
+    position: absolute;
+    top: 130px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #d3d3d3;
+    border-radius: 28px;
+    filter: drop-shadow(0px 0px 8px #ffffff);
+  }
+  
+  h1 {
+    font-size: 24px;
+    padding: 16px 0 0 0;
+  }
+  
+  .stars {
+    height: 20px;
+  }
+  
+  .restaurantRating {
+    display: flex;
+    align-items: center;
+  }
+  
+  .restaurantRating {
+    font-size: 14px;
+  }
+  
+  .restaurantRating > span {
+    padding-left: 16px;
+  }
