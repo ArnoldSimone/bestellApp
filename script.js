@@ -3,41 +3,12 @@ let subCostsDishes = 0;
 let subCostsTotal = 0;
 let delivery = false;
 let deliveryCosts = 5.9;
+let ordered = false;
 
 function init() {
   renderDishes();
   renderEmptyBasket();
-  const sections = document.querySelectorAll(".ctnMealsCategory"); 
-  const navLinks = document.querySelectorAll(".linkNavbar"); 
-
-  window.addEventListener("scroll", () => {
-    let current = "";
-
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop - 150;
-      const sectionHeight = section.offsetHeight;
-      const scrollY = window.scrollY;
-
-      // Überprüfen, ob der Abschnitt im Sichtbereich ist
-      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-        current = section.querySelector("h1").id;
-      }
-    });
-
-    // Entferne die 'active'-Klasse von allen Links
-    navLinks.forEach((link) => {
-      link.classList.remove("activeNav");
-    });
-
-    // Füge die 'active'-Klasse nur dem passenden Link hinzu
-    if (current) {
-      navLinks.forEach((link) => {
-        if (link.getAttribute("href").includes(current)) {
-          link.classList.add("activeNav");
-        }
-      });
-    }
-  });
+  scrolly();
 }
 
 function renderDishes() {
@@ -78,18 +49,25 @@ function renderBasket() {
       indexDishes < menu[indexMenu].dishes.length;
       indexDishes++
     ) {
-      let imageAmountRef = document.getElementById("imageAmount" + indexMenu + indexDishes);
-      let imageAmountNumberRef = document.getElementById("imageAmountNumber" + indexMenu + indexDishes);
+      let imageAmountRef = document.getElementById(
+        "imageAmount" + indexMenu + indexDishes
+      );
+      let imageAmountNumberRef = document.getElementById(
+        "imageAmountNumber" + indexMenu + indexDishes
+      );
       let ctnSwitchRef = document.getElementById("ctnSwitch");
       if (menu[indexMenu].dishes[indexDishes].amount >= 1) {
         emptyBasket = false;
-        
+
         imageAmountRef.classList.add("dnone");
         imageAmountNumberRef.classList.remove("dnone");
         ctnSwitchRef.classList.remove("dnone");
-        imageAmountNumberRef.innerHTML =menu[indexMenu].dishes[indexDishes].amount;
+        imageAmountNumberRef.innerHTML =
+          menu[indexMenu].dishes[indexDishes].amount;
         ctnBasketRef.innerHTML += getBasketTemplate(indexMenu, indexDishes);
-        subCostsDishes = menu[indexMenu].dishes[indexDishes].price * menu[indexMenu].dishes[indexDishes].amount;
+        subCostsDishes =
+          menu[indexMenu].dishes[indexDishes].price *
+          menu[indexMenu].dishes[indexDishes].amount;
         subCostsTotal = subCostsTotal + subCostsDishes;
         renderSummary(subCostsTotal);
       } else {
@@ -106,7 +84,9 @@ function renderBasket() {
 function quantityBasket(subCostsTotal) {
   let quantitiy = 0;
   let numberAmountBasketRef = document.getElementById("numberAmountBasket");
-  let basketButtonTotalCostsRef = document.getElementById("basketButtonTotalCosts");
+  let basketButtonTotalCostsRef = document.getElementById(
+    "basketButtonTotalCosts"
+  );
   numberAmountBasketRef.innerHTML = "";
   for (let indexMenu = 0; indexMenu < menu.length; indexMenu++) {
     for (
@@ -119,7 +99,7 @@ function quantityBasket(subCostsTotal) {
       }
     }
   }
-  basketButtonTotalCostsRef.innerHTML = ((subCostsTotal).toFixed(2) + " €");
+  basketButtonTotalCostsRef.innerHTML = subCostsTotal.toFixed(2) + " €";
   numberAmountBasketRef.innerHTML = quantitiy;
 }
 
@@ -138,14 +118,13 @@ function deleteDishesOnBasket(indexMenu, indexDishes) {
   renderBasket();
 }
 
-function renderSummary(subCostsTotal) {
+function renderSummary() {
   let ctnSummaryRef = document.getElementById("ctnSummary");
   let ctnEmptyBasketRef = document.getElementById("ctnEmptyBasket");
   if (emptyBasket === false) {
     ctnEmptyBasketRef.innerHTML = "";
     ctnSummaryRef.innerHTML = getRenderSummaryTemplate();
   }
-
 }
 
 function renderEmptyBasket() {
@@ -158,7 +137,12 @@ function renderEmptyBasket() {
     document.getElementById("delivery").classList.remove("active");
     document.getElementById("pickup").classList.add("active");
     delivery = false;
-    ctnEmptyBasketRef.innerHTML = getEmptyBasket();
+    if (ordered === false) {
+      ctnEmptyBasketRef.innerHTML = getEmptyBasket();
+    } else {
+      ctnEmptyBasketRef.innerHTML = getOrderedMessage();
+      ordered = false;
+    }
   }
 }
 
@@ -196,4 +180,59 @@ function showBasketButtonResponive() {
     ctnBasketResponsiveRef.classList.add("dnone");
     ctnBasketWrapperRef.classList.remove("active");
   }
+}
+
+function order() {
+  let ctnBasketRef = document.getElementById("ctnBasket");
+  ctnBasketRef.innerHTML = "";
+  ordered = true;
+  for (let indexMenu = 0; indexMenu < menu.length; indexMenu++) {
+    for (
+      let indexDishes = 0;
+      indexDishes < menu[indexMenu].dishes.length;
+      indexDishes++
+    ) {
+      if (menu[indexMenu].dishes[indexDishes].amount >= 1) {
+        menu[indexMenu].dishes[indexDishes].amount = 0;
+      }
+    }
+  }
+  ctnBasketRef.innerHTML = getOrderedMessage();
+  renderBasket();
+  let ctnBasketWrapperRef = document.getElementById("ctnBasketWrapper");
+  ctnBasketWrapperRef.classList.add("active");
+}
+
+function scrolly() {
+  const sections = document.querySelectorAll(".ctnMealsCategory");
+  const navLinks = document.querySelectorAll(".linkNavbar");
+  window.addEventListener("scroll", () => {
+    let current = "";
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop - 350;
+      const sectionHeight = section.offsetHeight;
+      const scrollY = window.scrollY;
+      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+        current = section.querySelector("h1").id;
+      }
+    });
+    navLinks.forEach((link) => {
+      link.classList.remove("activeNav");
+    });
+    if (current) {
+      navLinks.forEach((link) => {
+        if (link.getAttribute("href").includes(current)) {
+          link.classList.add("activeNav");
+        }
+      });
+    }
+  });
+}
+
+function closeBasketAfterOrder() {
+  init();
+  let ctnBasketWrapperRef = document.getElementById("ctnBasketWrapper");
+  let ctnBasketResponsiveRef = document.getElementById("ctnBasketResponsive");
+  ctnBasketWrapperRef.classList.remove("active");
+  ctnBasketResponsiveRef.classList.add("dnone");
 }

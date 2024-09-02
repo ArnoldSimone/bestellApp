@@ -106,7 +106,7 @@ function getRenderSummaryTemplate() {
       </div>
     </div>
     <div class="ctnButtonPay">
-      <button class="pay">Zur Kasse</button>
+      <button onclick="order()" class="pay">Bestellen</button>
     </div>`;
 }
 
@@ -114,4 +114,16 @@ function getEmptyBasket() {
   return `           
     <img src="./assets/icons/basket.png" alt="iconBasket" />
     <p>Wähle leckere Gerichte aus der Karte und bestelle Dein Menu.</p>`;
+}
+
+function getOrderedMessage() {
+  return `           
+    <img src="./assets/icons/basket.png" alt="iconBasket" />
+    <p>Vielen Dank für Ihre Bestellung.</p>
+    <p>Ihre Testbestellung ist bei uns eingegengen.</p>
+    <div class="ctnButtonPay">
+      <a href="#imageMenu">
+        <button onclick="closeBasketAfterOrder()" class="ordered">Zurück zur Startseite</button>
+      </>
+    </div>`;
 }

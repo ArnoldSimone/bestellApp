@@ -1,4 +1,4 @@
-/* SECTIOM ctnRestauranBasket */
+/* SECTION ctnRestauranBasket */
 
 .restaurantHeader {
   padding: 16px;
@@ -372,6 +372,25 @@
 }
 
 .pay:hover {
+  background-color: #ff8913;
+  cursor: pointer;
+}
+
+.ordered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ff8000;
+  font-size: 16px;
+  font-weight: bold;
+  width: 100%;
+  padding: 8px 16px;
+  color: white;
+  border-radius: 20px;
+  border: none;
+}
+
+.ordered:hover {
   background-color: #ff8913;
   cursor: pointer;
 }
