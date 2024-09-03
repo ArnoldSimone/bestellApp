@@ -1,63 +1,73 @@
 @media (max-width: 850px) {
-    .description {
-      font-size: 14px;
-    }
-    .price {
-      font-size: 14px;
-    }
-    .meal {
-      font-size: 16px;
-    }
-    .category {
-      font-size: 20px;
-    }
-    .ctnBasketWrapper {
-      display: none;
-      position: fixed;
-      top: 0;
-      right: 0;
-      bottom: 0px;
-      background-color: white;
-      width: 100%;
-      z-index: 1000;
-      overflow-y: auto;
-      border: none;
-    }
-    .ctnBasketWrapper.active {
-      display: block;
-      z-index: 2000;
-    }
-    .ctnRestaurant {
-      width: 100%;
-    }
-    .ctnFooter {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-    }
-    .dishes {
-      margin-bottom: 140px;
-    }
-    .ctnBasketButtonResponsive {
-      display: flex;
-      z-index: 2000;
-      padding: 16px;
-      background-color: white;
-    }
-    .basketButtonResponsive {
-      font-size: 16px;
-      gap: 10px;
-    }
-    .pay {
-      width: 150px;
-      font-size: 16px;
-    }
-    .ctnButtonPay {
-      justify-content: end;
-    }
-    .ctnRestauranBasket {
-      overflow: scroll;
-    }
+  .description {
+    font-size: 14px;
   }
-  
+  .price {
+    font-size: 14px;
+  }
+  .meal {
+    font-size: 16px;
+  }
+  .category {
+    font-size: 20px;
+  }
+  .ctnBasketWrapper {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0px;
+    background-color: white;
+    width: 100%;
+    z-index: 1000;
+    border: none;
+  }
+  .ctnBasketWrapper.active {
+    display: block;
+    z-index: 2000;
+  }
+  .ctnRestaurant {
+    width: 100%;
+  }
+  .ctnFooter {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  .dishes {
+    margin-bottom: 140px;
+  }
+  .ctnBasketButtonResponsive {
+    display: flex;
+    z-index: 2000;
+    padding: 16px;
+    background-color: white;
+  }
+  .basketButtonResponsive {
+    font-size: 16px;
+    gap: 30px;
+  }
+  .pay {
+    width: 150px;
+    font-size: 16px;
+  }
+  .ctnButtonPay {
+    justify-content: end;
+  }
+  #titleBasket {
+    padding: 8px;
+  }
+  .ctnBasket {
+    font-size: 14px;
+    margin-top: 15px;
+    margin-bottom: 0px;
+    max-height: 260px;
+  }
+  .ctnTotal {
+    font-size: 14px;
+  }
+
+}
+
+

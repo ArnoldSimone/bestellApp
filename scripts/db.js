@@ -1,6 +1,6 @@
 let menu = [
   {
-    category: "Vorspeise",
+    category: "Salat",
     dishes: [
       {
         name: "Gemischter Salat",
@@ -36,7 +36,7 @@ let menu = [
   },
 
   {
-    category: "Hauptgericht",
+    category: "Pizza",
     dishes: [
       {
         name: "Pizza Margherita",
@@ -72,7 +72,7 @@ let menu = [
   },
 
   {
-    category: "Dessert",
+    category: "Süßes",
     dishes: [
       {
         name: "Tiramisu",

@@ -8,6 +8,7 @@
     <script src="./scripts/db.js"></script>
     <script src="./script.js"></script>
     <script src="./scripts/template.js"></script>
+    <script src="./scripts/scrolly.js"></script>
 
     <link rel="stylesheet" href="./styles/assets.css" />
     <link rel="stylesheet" href="./styles/standard.css" />
@@ -35,7 +36,7 @@
       </div>
     </header>
 
-    <section class="ctnRestauranBasket">
+    <section class="ctnRestaurantBasket">
       <div class="ctnRestaurant">
         <div class="imagesHeader">
           <img id="imageMenu" src="./assets/img/food.jpg" alt="imageMenu" />
@@ -65,15 +66,13 @@
           <img id="arrow" src="./assets/icons/sort-26.png" alt="" />
           <a href="#category0" class="category0 linkNavbar">Salat</a>
           <a href="#category1" class="category1 linkNavbar">Pizza</a>
-          <a href="#category2" class="category2 linkNavbar">Dessert</a>
+          <a href="#category2" class="category2 linkNavbar">Süßes</a>
         </div>
         <div id="dishes" class="dishes"></div>
       </div>
-
       <div id="ctnBasketWrapper" class="ctnBasketWrapper">
         <div class="ctnBasketSticky">
           <h2 id="titleBasket">Warenkorb</h2>
-
           <div id="ctnSwitch" class="ctnSwitch dnone">
             <div class="switch">
               <div
@@ -92,9 +91,7 @@
               </div>
             </div>
           </div>
-
           <div id="ctnBasket" class="ctnBasket"></div>
-
           <div id="ctnSummary" class="ctnSummary"></div>
           <div id="ctnEmptyBasket" class="ctnEmptyBasket"></div>
         </div>
