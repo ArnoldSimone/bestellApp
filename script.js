@@ -87,7 +87,7 @@ function quantityBasket(subCostsTotal) {
       }
     }
   }
-  basketButtonTotalCostsRef.innerHTML = subCostsTotal.toFixed(2) + " €";
+  basketButtonTotalCostsRef.innerHTML = subCostsTotal.toFixed(2).replace(".", ",") + " €";
   numberAmountBasketRef.innerHTML = quantitiy;
 }
 
@@ -166,15 +166,13 @@ function removeDeliveryCosts() {
 function BasketToggle() {
   let ctnBasketWrapperRef = document.getElementById("ctnBasketWrapper");
   let basketButtonTextRef = document.getElementById("basketButtonText");
-  let imageBasketNumberRef = document.getElementById("imageBasketNumber");
-  let basketButtonTotalCostsRef = document.getElementById("basketButtonTotalCosts");
   ctnBasketWrapperRef.classList.toggle("active");
-  handleBasketWrapperActiv(basketButtonTextRef, imageBasketNumberRef, basketButtonTotalCostsRef, ctnBasketWrapperRef);
+  handleBasketWrapperActiv(basketButtonTextRef, ctnBasketWrapperRef);
 }
 
 function handleBasketWrapperActiv(basketButtonTextRef, ctnBasketWrapperRef) {
   if (ctnBasketWrapperRef.classList.contains("active")) {
-    basketButtonTextRef.innerText = "Warenkorb schließen";
+    basketButtonTextRef.innerHTML = "Warenkorb schließen";
     handleBasketButtonResponiveActiveAmountTotalCosts();
   } else {
     basketButtonTextRef.innerText = "Warenkorb";
